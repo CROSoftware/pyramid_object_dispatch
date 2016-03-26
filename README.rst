@@ -5,7 +5,7 @@ Pyramid Object Dispatch
 Introduction
 ============
 
-Adds the functionality of an object based dispatcher to pyramid.
+Adds the functionality of marrow dispatch protocol for use with dispatchers such as web.dispatch.object
 
 
 Installation
@@ -35,7 +35,9 @@ Or include it with Pyramid's Configurator located in `__init__.py` for scaffold 
         ...
         config.include('pyramid_object_dispatch')
 
-Next, you can add a controller via Pyramid's Configurator::
+Object dispatch
+---------------
+You can add an object controller via Pyramid's Configurator::
 
     class Controller:
         def __init__(self, context):
@@ -63,8 +65,11 @@ Next, you can add a controller via Pyramid's Configurator::
 
     def main(global_config, **settings):
         ...
-        config.add_controller('home', '/', Controller)
+        from web.dispatch.object import ObjectDispatch
+        dispatch = ObjectDispatch()
+        config.add_controller('home', '/', Controller, dispatch)
 
 Framework Use
 =============
 Please see the web.dispatch.object framework at https://github.com/marrow/web.dispatch.object/
+and the dispatch protocols at https://github.com/marrow/protocols/tree/master/dispatch

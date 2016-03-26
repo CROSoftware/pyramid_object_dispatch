@@ -9,15 +9,14 @@ with open(os.path.join(here, 'CHANGES.txt')) as f:
     CHANGES = f.read()
 
 requires = [
-    'pyramid',
-    'web.dispatch.object<3.0'
+    'pyramid'
     ]
 
 install_links = []
 
-setup(name='pyramid_object_dispatch',
+setup(name='pyramid_dispatch_protocol',
       version='0.1',
-      description='Pyramid object based dispatching',
+      description='Pyramid dispatch protocol',
       long_description=README + '\n\n' + CHANGES,
       classifiers=[
         "Programming Language :: Python",

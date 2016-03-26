@@ -1,6 +1,5 @@
 # encoding: utf-8
 
-from web.dispatch.object import ObjectDispatch
 from pyramid.response import Response
 from collections import deque
 from collections.abc import Iterable
@@ -20,7 +19,7 @@ class Context(object):
         self.response = response
 
 
-def add_controller(self, route_name, pattern, controller, **kw):
+def add_controller(self, route_name, pattern, controller, dispatcher, **kw):
     '''
 
     :params route_name:
@@ -43,7 +42,7 @@ def add_controller(self, route_name, pattern, controller, **kw):
     if pattern.endswith('/'):
         pattern = pattern[:-1]
 
-    dispatch = ObjectDispatch()
+    dispatch = dispatcher
 
     def controllerInternalView(request):
         url = request.matchdict['controller_path']
