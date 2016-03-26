@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 from web.dispatch.object import ObjectDispatch
 from pyramid.response import Response
 from collections import deque
@@ -8,7 +10,7 @@ from webob.exc import HTTPNotFound
 An implementation of web.dispatch.object for pyramid.
 '''
 
-class Context:
+class Context(object):
     '''
     A psuedo implementation of WebCore's context object to better emulate the
     usage of web.dispatch.object
