@@ -4,6 +4,10 @@ from collections import deque
 from collections.abc import Iterable
 from webob.exc import HTTPNotFound
 
+'''
+An implementation of web.dispatch.object for pyramid.
+'''
+
 class Context:
     '''
     A psuedo implementation of WebCore's context object to better emulate the
@@ -13,9 +17,6 @@ class Context:
         self.request = request
         self.response = response
 
-'''
-An implementation of web.object.dispatch for pyramid.
-'''
 
 def add_controller(self, route_name, pattern, controller, **kw):
     '''
