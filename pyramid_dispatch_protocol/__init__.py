@@ -44,8 +44,9 @@ def add_controller(self, route_name, pattern, controller, dispatcher, **kw):
 
     dispatch = dispatcher
 
+
     def controllerInternalView(request):
-        url = request.matchdict['controller_path']
+        url = request.matchdict.get('controller_path', '')
 
         path = url.split('/')
         path = deque(path)
@@ -69,7 +70,9 @@ def add_controller(self, route_name, pattern, controller, dispatcher, **kw):
         return response
 
     self.add_route(route_name, pattern + '/{controller_path:.*}', **kw)
+    self.add_route(route_name+'-index', pattern, **kw)
     self.add_view(view=controllerInternalView, route_name=route_name)
+    self.add_view(view=controllerInternalView, route_name=route_name+'-index')
 
 def includeme(config):
     config.add_directive('add_controller', add_controller)
