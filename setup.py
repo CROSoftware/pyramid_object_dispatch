@@ -9,12 +9,11 @@ with open(os.path.join(here, 'CHANGES.txt')) as f:
     CHANGES = f.read()
 
 requires = [
-    'pyramid'
+    'pyramid',
+    'web.dispatch.object'
     ]
 
-install_links = [
-    'git@github.com:marrow/web.dispatch.object.git#egg=web.object.dispatch'
-    ]
+install_links = []
 
 setup(name='Pyramid_Object_Dispatch',
       version='0.1',

@@ -7,7 +7,7 @@ from webob.exc import HTTPNotFound
 class Context:
     '''
     A psuedo implementation of WebCore's context object to better emulate the
-    usage of web.object.dispatch
+    usage of web.dispatch.object
     '''
     def __init__(self, request, response):
         self.request = request
