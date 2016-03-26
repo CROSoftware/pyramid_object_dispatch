@@ -10,7 +10,7 @@ with open(os.path.join(here, 'CHANGES.txt')) as f:
 
 requires = [
     'pyramid',
-    'web.dispatch.object'
+    'web.dispatch.object<3.0'
     ]
 
 install_links = []
