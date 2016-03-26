@@ -15,7 +15,7 @@ requires = [
 
 install_links = []
 
-setup(name='Pyramid_Object_Dispatch',
+setup(name='pyramid_object_dispatch',
       version='0.1',
       description='Pyramid object based dispatching',
       long_description=README + '\n\n' + CHANGES,
@@ -31,7 +31,7 @@ setup(name='Pyramid_Object_Dispatch',
       keywords='web pyramid pylons',
       packages=find_packages(),
       include_package_data=True,
-      zip_safe=False,
+      zip_safe=True,
       install_requires=requires,
       dependency_links=install_links
       )
